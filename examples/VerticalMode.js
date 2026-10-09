@@ -17,8 +17,7 @@ function VerticalMode() {
     }
   };
   return (
-    <div>
-      <h2>Vertical Mode</h2>
+    <div className="slider-container">
       <Slider {...settings}>
         <div>
           <h3>1</h3>

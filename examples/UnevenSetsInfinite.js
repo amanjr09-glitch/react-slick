@@ -10,8 +10,7 @@ function UnevenSetsInfinite() {
     slidesToShow: 4
   };
   return (
-    <div>
-      <h2>Uneven sets (infinite)</h2>
+    <div className="slider-container">
       <Slider {...settings}>
         <div>
           <h3>1</h3>

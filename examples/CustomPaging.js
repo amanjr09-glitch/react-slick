@@ -19,8 +19,7 @@ function CustomPaging() {
     slidesToScroll: 1
   };
   return (
-    <div>
-      <h2>Custom Paging</h2>
+    <div className="slider-container">
       <Slider {...settings}>
         <div>
           <img src={baseUrl + "/abstract01.jpg"} />

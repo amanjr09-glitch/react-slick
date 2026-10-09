@@ -1,18 +1,16 @@
 import React from "react";
 import Slider from "react-slick";
 
-function SimpleSlider(props) {
+function SimpleSlider() {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1,
-    ...props
+    slidesToScroll: 1
   };
   return (
-    <div>
-      <h2> Single Item</h2>
+    <div className="slider-container">
       <Slider {...settings}>
         <div>
           <h3>1</h3>

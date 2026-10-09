@@ -13,8 +13,7 @@ function MultipleRows() {
     slidesPerRow: 2
   };
   return (
-    <div>
-      <h2>Multiple Rows</h2>
+    <div className="slider-container">
       <Slider {...settings}>
         <div>
           <h3>1</h3>

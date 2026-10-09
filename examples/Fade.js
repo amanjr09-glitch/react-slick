@@ -13,8 +13,7 @@ function Fade() {
     waitForAnimate: false
   };
   return (
-    <div>
-      <h2>Fade</h2>
+    <div className="slider-container">
       <Slider {...settings}>
         <div>
           <img src={baseUrl + "/abstract01.jpg"} />

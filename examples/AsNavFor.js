@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 
-function AsNavFor(props) {
+function AsNavFor() {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   let sliderRef1 = useRef(null);
@@ -12,7 +12,7 @@ function AsNavFor(props) {
     setNav2(sliderRef2);
   }, []);
   return (
-    <div>
+    <div className="slider-container">
       <h2>Slider Syncing (AsNavFor)</h2>
       <h4>First Slider</h4>
       <Slider asNavFor={nav2} ref={slider => (sliderRef1 = slider)}>

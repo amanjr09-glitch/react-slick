@@ -5,7 +5,8 @@ import classnames from "classnames";
 import {
   lazyStartIndex,
   lazyEndIndex,
-  getPreClones
+  getPreClones,
+  getPostClones
 } from "./utils/innerSliderUtils";
 
 // given specifications/props for a slide, fetch all the classes that need to be applied to the slide
@@ -67,6 +68,7 @@ const getSlideStyle = spec => {
       style.left = -spec.index * parseInt(spec.slideWidth);
     }
     style.opacity = spec.currentSlide === spec.index ? 1 : 0;
+    style.zIndex = spec.currentSlide === spec.index ? 999 : 998;
     if (spec.useCSS) {
       style.transition =
         "opacity " +
@@ -135,11 +137,14 @@ const renderSlides = spec => {
     );
 
     // if slide needs to be precloned or postcloned
-    if (spec.infinite && spec.fade === false) {
+    if (
+      spec.infinite &&
+      childrenCount > 1 &&
+      spec.fade === false &&
+      !spec.unslick
+    ) {
       let preCloneNo = childrenCount - index;
-      if (
-        preCloneNo <= getPreClones(spec) 
-      ) {
+      if (preCloneNo <= getPreClones(spec)) {
         key = -preCloneNo;
         if (key >= startIndex) {
           child = elem;
@@ -162,7 +167,7 @@ const renderSlides = spec => {
           })
         );
       }
-
+      if (index < getPostClones(spec)) {
         key = childrenCount + index;
         if (key < endIndex) {
           child = elem;
@@ -184,6 +189,7 @@ const renderSlides = spec => {
             }
           })
         );
+      }
     }
   });
 

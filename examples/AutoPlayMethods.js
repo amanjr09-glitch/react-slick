@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Slider from "react-slick";
 
-function AutoPlayMethods(props) {
+function AutoPlayMethods() {
   let sliderRef = useRef(null);
   const play = () => {
     sliderRef.slickPlay();
@@ -19,7 +19,7 @@ function AutoPlayMethods(props) {
     autoplaySpeed: 2000
   };
   return (
-    <div>
+    <div className="slider-container">
       <h2>Auto Play {"&"} Pause with buttons</h2>
       <Slider ref={slider => (sliderRef = slider)} {...settings}>
         <div>

@@ -10,8 +10,7 @@ function MultipleItems() {
     slidesToScroll: 3
   };
   return (
-    <div>
-      <h2> Multiple items </h2>
+    <div className="slider-container">
       <Slider {...settings}>
         <div>
           <h3>1</h3>

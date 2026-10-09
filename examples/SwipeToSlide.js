@@ -15,8 +15,7 @@ function SwipeToSlide() {
     }
   };
   return (
-    <div>
-      <h2>Swipe To Slide</h2>
+    <div className="slider-container">
       <Slider {...settings}>
         <div>
           <h3>1</h3>
